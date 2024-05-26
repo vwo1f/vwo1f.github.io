@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End | Portfolio | VM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+       
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#about" class="menu">About</a></li>
+                    <li><a href="#skills" class="menu">Skills</a></li>
+                    <li><a href="#projects" class="menu">Projects</a></li>
+                    <li><a href="#contact" class="menu">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+            <div class="container">
+                <h2>Hello, I'm <span>Vasya</span></h2>
+                <p>Front End Developer | Problem Solver</p>
+                <a href="#projects" class="btn">View My Work</a>
+                
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="about" data-aos="fade-up">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="content">
+                    <div class="profile-pic">
+                        <img src="/img/background2.jpg" alt="Your Photo">
+                    </div>
+                    <div class="bio">
+                        <p>Passionate full stack developer with over X years of experience in creating dynamic and responsive web applications. Skilled in various web technologies and always eager to learn more and take on new challenges.</p>
+                        <p>I specialize in building high-quality websites and applications using modern technologies. My goal is to provide top-notch solutions that meet the needs of my clients and help them achieve their business objectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="skills" data-aos="fade-up">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <div class="skill" data-aos="flip-left">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill" data-aos="flip-right">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill" data-aos="flip-left">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+        </section>
+        <section id="projects" data-aos="fade-up">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide project" data-aos="zoom-in">
+                            <img src="/img/site2.png" alt="Project 1">
+                            <h3>Project 1</h3>
+                            <p>This is my first website in html css js php
+                                <a href="https://github.com/vwo1f?tab=repositories">Перейти на Example</a>
+                            </p>
+                        </div>
+                        <div class="swiper-slide project" data-aos="zoom-in">
+                            <img src="/img/site2.png" alt="Project 2">
+                            <h3>Project 2</h3>
+                            <p>Project description here...</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" data-aos="fade-up">
+            <div class="container">
+                <h2>Contact</h2>
+                <form action="https://formspree.io/f/your_form_id" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+        <p>&copy; 2024 Front End VM</p>
+        <p class="footer-phone"><a>+380 (68) 733-0765</a></p>
+            <div class="socials">
+                <a href="https://www.instagram.com/vwo1f/"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/vwo1f"><i class="fab fa-github"></i></a>
+            </div>
+            
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    AOS.init({
+        duration: 1200,
+    });
+
+    
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    
+    const links = document.querySelectorAll('nav ul li a[href^="#"]');
+    for (const link of links) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    }
+});
+
+
+    </script>
+</body>
+</html>
